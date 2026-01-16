@@ -6,10 +6,10 @@ export async function getPostalAddress() {
     const users = response.data;
 
     return users.map(user => ({
-      id: user.id,
-      name: user.name,
-      phone: user.phone,
-      address: user.address
+      id: user.id ?? null,
+      name: user.name ?? null,
+      phone: user.phone ?? null,
+      address: user.address ?? null
     }));
   } catch (error) {
     throw error;
