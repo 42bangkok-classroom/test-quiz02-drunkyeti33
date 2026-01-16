@@ -21,7 +21,7 @@ type newUser = {
   };
 };
 import axios from "axios";
-export function addUser(newUser: newUser | null){
+export async function addUser(newUser: newUser | null){
   try {
     const response = await axios.get("https://jsonplaceholder.typicode.com/users");
     const users = response.data;
@@ -33,7 +33,7 @@ export function addUser(newUser: newUser | null){
       address: user.address ?? null
     }));
  
-    if (newUsera === null) {
+    if (newUser === null) {
       return formattedUsers;
     }
 
